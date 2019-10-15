@@ -10,14 +10,28 @@ FIRECLI把那些烦人的定位参数，可选参数等等全部进行了封装�
 
 ## 目录结构
 
+
+````
 .
-├── controllers
+├── controllers #存放业务脚本
 │   ├── __init__.py
 │   ├── template.py
 │   └── test.py
-├── main.py
+├── main.py # 入口程序
 ├── README.md
-├── requirements.txt
-└── ulitilies
+├── requirements.txt 
+└── ulitilies  # 存放自定义实用工具类
     ├── __init__.py
     └── telegrambot.py
+    
+````
+
+
+### 程序运行
+
+````
+python main.py test hello
+
+test --> controllers/test.py
+
+````
