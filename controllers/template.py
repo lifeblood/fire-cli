@@ -6,12 +6,13 @@ class Template(object):
     def run():
         return 'Ingesting! Nom nom nom...'
 
+    @classmethod
+    def class_method(cls):
+        print(cls.run())
+
     def public_method(self):
         print(self._code)
 
     def __private_method(self):
         print(self._code)
 
-    @classmethod
-    def class_method(cls):
-        print(cls.run())

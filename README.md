@@ -1,6 +1,6 @@
 
 # FIRECLI
-基于Google Python Fire库，设计的一套命令行模式下具有MVC理念的微型框架
+基于Google Python Fire库，设计的一套Python命令行模式下具有MVC理念的微型框架
 
 
 FIRECLI把那些烦人的定位参数，可选参数等等全部进行了封装，你只要专注业务逻辑部分。
