@@ -1,4 +1,4 @@
-class template(object):
+class Template(object):
     def __init__(self, code=1):
         self.code = code
         self._code = code
