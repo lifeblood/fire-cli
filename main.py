@@ -10,5 +10,6 @@ for i in CLASS_LIST:
 
 # print(FIRE_ROUTES)
 
+
 if __name__ == '__main__':
     fire.Fire(FIRE_ROUTES)
