@@ -1,4 +1,4 @@
-from bootstrap import firecli
+from bootstrap import app
 
 class Template(object):
     def __init__(self, code=1):

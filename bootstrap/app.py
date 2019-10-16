@@ -1,13 +1,13 @@
 from ulitilies import *
 
 
-class FireCli(object):
+class Cli(object):
     def __init__(self):
         pass
 
     @staticmethod
     def fire_config():
-        return fireconfig.FireConfig()
+        return fireconfig.FireConfig('./config/config.ini')
 
     @classmethod
     def config_get(cls, key):

@@ -6,10 +6,10 @@ except Exception:
 
 class FireConfig(object):
 
-    def __init__(self):
-        self.config_path = './config/config.ini'
+    def __init__(self, config_path):
+        self._config_path = config_path
         self.config = configparser.ConfigParser()
-        self.config.read(self.config_path)
+        self.config.read(self._config_path)
 
     def config_get(self, config_key):
         return self.config.get('default', config_key)

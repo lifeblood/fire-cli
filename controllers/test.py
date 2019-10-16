@@ -1,4 +1,4 @@
-from bootstrap import firecli
+from bootstrap import app
 
 
 class Test(object):
@@ -6,7 +6,7 @@ class Test(object):
         self._code = code
 
     def hello(self):
-        print(firecli.FireCli.config_get('path'))
+        print(app.Cli.config_get('path'))
         print(self._code)
 
     @staticmethod
