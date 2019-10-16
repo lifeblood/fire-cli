@@ -1,4 +1,7 @@
-import configparser
+try:
+    import configparser as configparser
+except Exception:
+    import ConfigParser as configparser
 
 
 class FireConfig(object):
