@@ -1,10 +1,11 @@
-class Template(object):
+class template(object):
     def __init__(self, code=1):
+        self.code = code
         self._code = code
 
     @staticmethod
     def run():
-        return 'Ingesting! Nom nom nom...'
+        return 'ingesting! nom nom nom...'
 
     @classmethod
     def class_method(cls):
