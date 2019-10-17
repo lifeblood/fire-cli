@@ -1,4 +1,4 @@
-from bootstrap import app
+from bootstrap import *
 
 
 class Test(object):
@@ -6,9 +6,13 @@ class Test(object):
         self._code = code
 
     def hello(self):
-        print(app.Cli.config_get('path'))
+        print(config.get('path'))
+        # print(app.Cli.config_get('patsh'))
+        print(app.get_ip())
+        print(app.TelegramBot.run())
         print(self._code)
 
     @staticmethod
     def run():
         return 'Ingesting! Nom nom nom...'
+

@@ -1,4 +1,5 @@
-from bootstrap import app
+from bootstrap import *
+
 
 class Template(object):
     def __init__(self, code=1):
