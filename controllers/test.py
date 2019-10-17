@@ -7,7 +7,8 @@ class Test(object):
 
     def hello(self):
         print(config.get('path'))
-        # print(app.Cli.config_get('patsh'))
+        r = config.get('ansible_url')
+        print((r))
         print(app.get_ip())
         print(app.TelegramBot.run())
         print(self._code)
