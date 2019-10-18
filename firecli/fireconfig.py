@@ -1,3 +1,4 @@
+import io
 try:
     import configparser as configparser
 except Exception:
@@ -11,7 +12,7 @@ class FireConfig(object):
 
     def _cfg(self):
         cfg = configparser.ConfigParser()
-        with open(self._config_path, mode="r", encoding="utf-8") as f:
+        with io.open(self._config_path, mode="r", encoding="utf-8") as f:
             try:
                 cfg.read_file(f)
             except AttributeError:
