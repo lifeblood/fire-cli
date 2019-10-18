@@ -1,4 +1,4 @@
 from firecli import *
 
-# config facade
+# fireConfig Singleton
 config = FireConfig()

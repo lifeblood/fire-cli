@@ -8,9 +8,10 @@ class Test(object):
     def hello(self):
         print(config.get('path'))
         r = config.get('ansible_url')
-        print((r))
+        print(r)
         print(app.get_ip())
-        print(app.TelegramBot.run())
+        print(app.TelegramBot('2'))
+        print(app.TelegramBot('2'))
         print(self._code)
 
     @staticmethod
