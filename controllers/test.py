@@ -9,7 +9,7 @@ class Test(object):
         print(config.get('path'))
         r = config.get('ansible_url')
         print(r)
-
+        
         print(app.get_ip())
         print(app.TelegramBot('2'))
         print(app.TelegramBot('2'))

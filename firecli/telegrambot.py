@@ -14,6 +14,10 @@ class TelegramBot(object):
     def run():
         return 'Hello telegram!'
 
+    @staticmethod
+    def _run():
+        return 'Hello telegram!'
+
     def send_message(self, channel_id, message):
         bot = self.bot()
         bot.send_message(chat_id=channel_id, text=message)
