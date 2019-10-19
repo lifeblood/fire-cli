@@ -8,6 +8,10 @@ FIRECLI把那些烦人的定位参数，可选参数等等全部进行了封装�
 
 不需要花大力气去熟悉argparse, click等库的用法, 提升运维日常脚本开发效率。
 
+## 主要功能
+
+config key value配置功能，配置文件路径：config/config.ini
+
 
 ## 目录结构
 

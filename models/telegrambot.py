@@ -11,8 +11,8 @@ class TelegramBot(object):
         return bot
 
     @staticmethod
-    def run():
-        return 'Hello telegram!'
+    def run(value):
+        return 'Hello telegram!' + value
 
     @staticmethod
     def _run():

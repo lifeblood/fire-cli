@@ -1,4 +1,5 @@
-from bootstrap import *
+from bootstrap import app
+from models import *
 
 
 class Template(object):
