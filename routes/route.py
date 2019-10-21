@@ -1,8 +1,7 @@
-from controllers import class_list
-from controllers import *
+#################################
+# Controllers Directory Files
+#################################
 
-fire_routes = dict()
+route_list = ['test']
 
-
-for i in class_list:
-    fire_routes[i] = eval(i + '.' + i.capitalize())
+#################################

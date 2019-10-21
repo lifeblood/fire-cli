@@ -13,6 +13,8 @@ class Test(object):
         print(TelegramBot.run('ss'))
         print(app.config())
         print(app.utils().get_ip())
+        print(app.utils())
+        print(app.utils())
         print(self._code)
 
     @staticmethod

@@ -1,5 +1,5 @@
 import fire
-from routes import fire_routes
+from bootstrap import route
 
 if __name__ == '__main__':
-    fire.Fire(fire_routes)
+    fire.Fire(route.get_routes())

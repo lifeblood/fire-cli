@@ -17,24 +17,29 @@ config key value配置功能，配置文件路径：config/config.ini
 
 
 ````
-.
-├── bootstrap  #业务引导类
+    
+├── bootstrap # helpers业务引导类
 │   ├── app.py
 │   └── __init__.py
-├── config  #配置文件
+├── config  #文件配置目录
 │   └── config.ini
 ├── controllers  # 业务脚本存放目录，并自动注入到入口程序
 │   ├── __init__.py
-│   ├── template.py  # 业务类模板
-│   └── test.py    # 具体业务类
-├── main.py   统一入口程序
+│   ├── template.py
+│   └── test.py
+├── helpers  内置助手类
+│   ├── fireconfig.py
+│   ├── __init__.py
+│   └── utils.py
+├── main.py
+├── models  # 自定义业务类
+│   ├── __init__.py
+│   └── telegrambot.py
 ├── README.md
 ├── requirements.txt
-└── ulitilies   # 存放自定义实用工具类
-    ├── fireconfig.py
+└── routes
     ├── __init__.py
-    └── telegrambot.py # 纸飞机机器人实用类
-    
+    └── route.py   # 控制层路由配置文件
     
 ````
 

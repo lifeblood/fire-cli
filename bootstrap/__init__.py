@@ -1,2 +1,3 @@
 from .app import App as app
-__all__ = ['app']
+from .app import Route as route
+__all__ = ['app', 'route']
