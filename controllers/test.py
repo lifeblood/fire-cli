@@ -9,11 +9,11 @@ class Test(object):
 
     def hello(self):
         print(app.config().get('name'))
-        print(app.config().get('cnname'))
+        print(app.config().get('mysql::host'))
+        print(app.config().getint('mysql::port'))
         print(TelegramBot.run('ss'))
         print(app.config())
         print(app.utils().get_ip())
-        print(app.utils())
         print(app.utils())
         print(self._code)
 
