@@ -1,7 +1,7 @@
 import io
 try:
     import configparser as configparser
-except Exception:
+except ImportError:
     import ConfigParser as configparser
 
 
@@ -25,17 +25,33 @@ class FireConfig(object):
         str_list = config_key.split(self._splitter)
         if len(str_list) == 1:
             str_list.insert(0, self._default_section)
-        return str_list
+        section = "".join(str_list[0:1])
+        key = "".join(str_list[-1:2])
+        return section, key
+
+    def _get_config(self, get_type, config_key):
+        dictionary = {
+            'string': self._cfg().get,
+            'int': self._cfg().getint,
+            'float': self._cfg().getfloat,
+            'boolean': self._cfg().getboolean
+        }
+        section, key = self._split_init_key(config_key)
+        try:
+            data = dictionary.get(get_type)(section, key)
+        except (configparser.NoSectionError, configparser.NoOptionError) as e:
+            data = e
+        return data
 
     def get(self, config_key):
-        data = self._split_init_key(config_key)
-        section = "".join(data[0:1])
-        key = "".join(data[-1:2])
-        return self._cfg().has_option(section, key) and self._cfg().get(section, key) or None
+        return self._get_config('string', config_key)
 
     def getint(self, config_key):
-        data = self._split_init_key(config_key)
-        section = "".join(data[0:1])
-        key = "".join(data[-1:2])
-        return self._cfg().has_option(section, key) and self._cfg().getint(section, key) or None
+        return self._get_config('int', config_key)
+
+    def getfloat(self, config_key):
+        return self._get_config('float', config_key)
+
+    def getboolean(self, config_key):
+        return self._get_config('boolean', config_key)
 

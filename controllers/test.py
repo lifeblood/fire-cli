@@ -11,6 +11,8 @@ class Test(object):
         print(app.config().get('name'))
         print(app.config().get('mysql::host'))
         print(app.config().getint('mysql::port'))
+        print(app.config().getboolean('boolean'))
+        print(app.config().getfloat('float'))
         print(TelegramBot.run('ss'))
         print(app.config())
         print(app.utils().get_ip())

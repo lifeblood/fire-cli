@@ -10,8 +10,9 @@ FIRECLI把那些烦人的定位参数，可选参数等等全部进行了封装�
 
 ## 主要功能
 
-config key value配置功能，配置文件路径：config/config.ini
+config key value配置功能，配置文件：config/config.ini
 
+类似 laravel/lumen的访问路由配置协议，配置文件：routes/route.py
 
 ## 目录结构
 
