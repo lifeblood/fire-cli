@@ -1,5 +1,5 @@
 
-# FIRECLI [![Build Status](https://travis-ci.org/lifeblood/fire-cli.svg?branch=master)](https://travis-ci.org/lifeblood/firecli)
+# FIRE-CLI [![Build Status](https://travis-ci.org/lifeblood/fire-cli.svg?branch=master)](https://travis-ci.org/lifeblood/fire-cli)
 
 
 基于Google Python Fire库，设计的一套Python命令行模式下具有MVC理念的微型框架

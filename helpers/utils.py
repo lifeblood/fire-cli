@@ -24,13 +24,18 @@ class Utils(object):
     @staticmethod
     def _request(method, **kwargs):
         try:
+            json_parse_exception = json.decoder.JSONDecodeError
+        except AttributeError:  # Python 2
+            json_parse_exception = ValueError
+
+        try:
             res = requests.request(method, **kwargs)
         except requests.RequestException as e:
             print(e)
         else:
             try:
                 return res.json()
-            except json.decoder.JSONDecodeError as e:
+            except json_parse_exception as e:
                 print(e)
 
     @classmethod
