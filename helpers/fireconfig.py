@@ -21,13 +21,11 @@ class FireConfig(object):
                 cfg.readfp(f)
         return cfg
 
-    def _split_init_key(self, config_key):
+    def _split_key(self, config_key):
         str_list = config_key.split(self._splitter)
         if len(str_list) == 1:
             str_list.insert(0, self._default_section)
-        section = "".join(str_list[0:1])
-        key = "".join(str_list[-1:2])
-        return section, key
+        return str_list
 
     def _get_config(self, get_type, config_key):
         dictionary = {
@@ -36,9 +34,9 @@ class FireConfig(object):
             'float': self._cfg().getfloat,
             'boolean': self._cfg().getboolean
         }
-        section, key = self._split_init_key(config_key)
+        config = self._split_key(config_key)
         try:
-            data = dictionary.get(get_type)(section, key)
+            data = dictionary.get(get_type)(config[0], config[1])
         except (configparser.NoSectionError, configparser.NoOptionError) as e:
             data = e
         return data
@@ -54,4 +52,3 @@ class FireConfig(object):
 
     def getboolean(self, config_key):
         return self._get_config('boolean', config_key)
-

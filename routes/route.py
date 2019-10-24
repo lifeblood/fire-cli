@@ -1,5 +1,7 @@
 ################################################
 # Controllers Directory Filename Classname MAP #
+# LEFT: package name                           #
+# RIGHT: classname                             #
 ################################################
 
 route_dict = {

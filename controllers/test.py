@@ -16,8 +16,12 @@ class Test(object):
         print(TelegramBot.run('ss'))
         print(app.config())
         print(app.utils().get_ip())
-        print(app.utils())
-        print(self._code)
+        args = {
+            'url': 'http://google.com',
+        }
+        print(app.utils().http_get_json(**args))
+        print(app.utils().eval('[1, 2, 3]'))
+        print(Model.version())
 
     @staticmethod
     def run():
