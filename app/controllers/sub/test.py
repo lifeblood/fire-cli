@@ -1,5 +1,5 @@
 from bootstrap import app
-from models import *
+from app.models import *
 
 
 class Test(object):
@@ -9,19 +9,13 @@ class Test(object):
 
     def hello(self):
         print(app.config().get('name'))
-        print(app.config().get('mysql::host'))
-        print(app.config().getint('mysql::port'))
-        print(app.config().getboolean('boolean'))
-        print(app.config().getfloat('float'))
+        print(app.config().get('cnname'))
         print(TelegramBot.run('ss'))
         print(app.config())
         print(app.utils().get_ip())
-        args = {
-            'url': 'http://google.com',
-        }
-        print(app.utils().http_get_json(**args))
-        print(app.utils().eval('[1, 2, 3]'))
-        print(Model.version())
+        print(app.utils())
+        print(app.utils())
+        print(self._code)
 
     @staticmethod
     def run():

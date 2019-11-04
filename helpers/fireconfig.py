@@ -11,6 +11,10 @@ class FireConfig(object):
         self._config_path = config_path
         self._default_section = 'default'
         self._splitter = '::'
+        self._string = 'string'
+        self._int = 'int'
+        self._float = 'float'
+        self._boolean = 'boolean'
 
     def _cfg(self):
         cfg = configparser.ConfigParser()
@@ -29,10 +33,10 @@ class FireConfig(object):
 
     def _get_config(self, get_type, config_key):
         dictionary = {
-            'string': self._cfg().get,
-            'int': self._cfg().getint,
-            'float': self._cfg().getfloat,
-            'boolean': self._cfg().getboolean
+            self._string: self._cfg().get,
+            self._int: self._cfg().getint,
+            self._float: self._cfg().getfloat,
+            self._boolean: self._cfg().getboolean
         }
         config = self._split_key(config_key)
         try:
@@ -42,13 +46,13 @@ class FireConfig(object):
         return data
 
     def get(self, config_key):
-        return self._get_config('string', config_key)
+        return self._get_config(self._string, config_key)
 
-    def getint(self, config_key):
-        return self._get_config('int', config_key)
+    def get_int(self, config_key):
+        return self._get_config(self._int, config_key)
 
-    def getfloat(self, config_key):
-        return self._get_config('float', config_key)
+    def get_float(self, config_key):
+        return self._get_config(self._float, config_key)
 
-    def getboolean(self, config_key):
-        return self._get_config('boolean', config_key)
+    def get_boolean(self, config_key):
+        return self._get_config(self._boolean, config_key)

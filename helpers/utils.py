@@ -39,12 +39,12 @@ class Utils(object):
                 print(e)
 
     @classmethod
-    def http_get_json(cls, **kwargs):
-        cls._request(cls._GET, **kwargs)
+    def get_http_json(cls, **kwargs):
+        return json.loads(json.dumps(cls._request(cls._GET, **kwargs)))
 
     @classmethod
-    def http_post_json(cls, **kwargs):
-        cls._request(cls._POST, **kwargs)
+    def post_http_json(cls, **kwargs):
+        return json.loads(json.dumps(cls._request(cls._POST, **kwargs)))
 
     @staticmethod
     def eval(name):
