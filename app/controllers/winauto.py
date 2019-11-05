@@ -9,7 +9,8 @@ class Winauto(object):
         # Run a target application
         app = Application().start("notepad.exe")
         # Select a menu item
-        app.UntitledNotepad.menu_select("帮助->关于记事本")
+        notepad = u'帮助->关于记事本'
+        app.UntitledNotepad.menu_select(notepad)
         # Click on a button
         out_note = u'关于记事本'
         button_name_ok = '确定'
