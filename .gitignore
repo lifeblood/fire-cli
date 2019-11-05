@@ -1,6 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 config/
 config/config.ini
+
+app/controllers/winauto.py
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -126,3 +128,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+.idea/
