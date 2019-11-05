@@ -25,7 +25,6 @@ class Test(object):
         print(app.utils().eval('[1, 2, 3]'))
         print(Model.version())
 
-
     @staticmethod
     def run():
         return 'Ingesting! Nom nom nom...'
