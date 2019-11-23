@@ -2,6 +2,8 @@ import socket
 import requests
 import json
 import ast
+import sys
+import subprocess
 
 
 class Utils(object):
@@ -47,12 +49,26 @@ class Utils(object):
         return json.loads(json.dumps(cls._request(cls._POST, **kwargs)))
 
     @staticmethod
-    def eval(name):
+    def get_eval_string(name):
         try:
-            res = ast.literal_eval(name)
+            res = ast.literal_eval(str(name))
         except (ValueError, SyntaxError) as e:
             res = e
         return res
+
+    @staticmethod
+    def subprocess_check_call(*command, is_shell=True, sh_name='/bin/bash'):
+        try:
+            subprocess.check_call(command, shell=is_shell, executable=sh_name)
+        except subprocess.CalledProcessError as exc:
+            print('run error:', exc.returncode)
+            sys.exit(exc.returncode)
+
+    @staticmethod
+    def print_fill_char(text):
+        # print(text.ljust(80, '*'), flush=True)
+        # < left > right ^ center
+        print('{:*<80}'.format(text), flush=True)
 
 
 

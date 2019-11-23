@@ -22,7 +22,7 @@ class Test(object):
         a = app.utils().get_http_json(**args)
         print(type(a))
         print(a)
-        print(app.utils().eval('[1, 2, 3]'))
+        print(app.utils().get_eval_string('[1, 2, 3]'))
         print(Model.version())
 
     @staticmethod
