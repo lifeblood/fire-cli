@@ -3,6 +3,7 @@ import requests
 import json
 import ast
 import sys
+import six
 import subprocess
 
 
@@ -68,7 +69,7 @@ class Utils(object):
     def print_fill_char(text):
         # print(text.ljust(80, '*'), flush=True)
         # < left > right ^ center
-        print('{:*<80}'.format(text), flush=True)
+        six.print_('{:*<80}'.format(text), flush=True)
 
 
 
