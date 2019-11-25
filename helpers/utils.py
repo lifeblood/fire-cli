@@ -57,9 +57,9 @@ class Utils(object):
         return res
 
     @staticmethod
-    def subprocess_check_call(*command, is_shell=True, sh_name='/bin/bash'):
+    def subprocess_check_call(*command, sh_name='/bin/bash'):
         try:
-            subprocess.check_call(command, shell=is_shell, executable=sh_name)
+            subprocess.check_call(command, shell=True, executable=sh_name)
         except subprocess.CalledProcessError as exc:
             print('run error:', exc.returncode)
             sys.exit(exc.returncode)
