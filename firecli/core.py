@@ -1,6 +1,7 @@
 import fire
 from .routing import Routing
 from .database import MySQL
+from .rpc import Rpc
 
 
 class FireCli(object):
@@ -8,8 +9,12 @@ class FireCli(object):
         pass
 
     @classmethod
-    def init(cls, controller_dir):
+    def init_fire(cls, controller_dir):
         fire.Fire(Routing.get_routes(controller_dir))
+
+    @classmethod
+    def init_rpc(cls, controller_dir, name, endpoint='0.0.0.0:4242'):
+        Rpc.rpyc_server(Routing.get_rpc_routes(controller_dir, name), endpoint)
 
 
 class Connection(object):

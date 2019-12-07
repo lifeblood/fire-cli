@@ -10,9 +10,11 @@ FIRECLI把那些烦人的定位参数，可选参数等等全部进行了封装�
 
 ## 主要功能
 
-config key value配置功能，配置文件：config/config.ini
+1.config key value配置功能，配置文件：config/config.ini
 
-类似 laravel/lumen的访问路由配置协议，配置文件：routes/route.py
+2. 类似 laravel/lumen的访问路由配置协议：routes/route.py
+
+3. 内置RPC模块（ RPyC / zeroprc ）
 
 ## 目录结构
 
@@ -49,7 +51,7 @@ config key value配置功能，配置文件：config/config.ini
 pip freeze > requirements.txt
 ````
 
-### 程序运行
+### CLI程序运行
 
 ````
 python main.py test hello
@@ -57,5 +59,12 @@ python main.py test hello
 test --> controllers/test.py
 
 hello --> controllers/test.py method
+
+````
+
+### RPC程序运行(daemon)
+
+````
+python main.py -r {rpc controller}
 
 ````

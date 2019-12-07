@@ -1,0 +1,53 @@
+version: '3.0'
+
+# docker networks
+# # create a network 'zerorpc_compose' in mode 'bridged'
+# docker network ls
+#
+# NETWORK ID          NAME                DRIVER              SCOPE
+# 50353e22a3ad        bridge              bridge              local
+# aabf00edfe33        host                host                local
+# 028776291c95        none                null                local
+#
+
+networks:
+  zerorpc_compose:
+    driver: bridge
+
+# services
+
+services:
+  # 1.ops_rpc
+  ops_rpc:
+    container_name: ops_rpc
+    image: wgame/python:v1
+    networks:
+      zerorpc_compose:
+    restart: unless-stopped # non stopped |always
+    volumes:
+     - .:/project
+    ports:
+      - 4242:4242
+    working_dir: /project
+    command:
+      - /bin/sh
+      - -c
+      - python main.py -r rpc
+      # - python server.py
+
+  # 2.ops_flask
+  ops_flask:
+    container_name: ops_flask
+    image: wgame/python:v1
+    networks:
+      zerorpc_compose:
+    restart: unless-stopped # non stopped |always
+    volumes:
+     - .:/project
+    ports:
+      - 8848:8848
+    working_dir: /project
+    command:
+      - /bin/sh
+      - -c
+      - python server.py

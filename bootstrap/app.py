@@ -40,7 +40,11 @@ class Route(FireCli):
         super(Route, self).__init__()
 
     @classmethod
-    def run(cls):
-        super(Route, cls).init(cls._controller_dir)
+    def run_fire(cls):
+        super(Route, cls).init_fire(cls._controller_dir)
+
+    @classmethod
+    def run_rpc(cls, name):
+        super(Route, cls).init_rpc(cls._controller_dir, name, endpoint=App.config().get('rpc::endpoint'))
 
 

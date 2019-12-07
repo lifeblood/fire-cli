@@ -1,5 +1,3 @@
-import telegram
-
 
 class TelegramBot(object):
 
@@ -7,6 +5,7 @@ class TelegramBot(object):
         self.token = token
 
     def bot(self):
+        import telegram
         bot = telegram.Bot(token=self.token)
         return bot
 
