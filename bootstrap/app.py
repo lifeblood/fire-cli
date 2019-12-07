@@ -32,6 +32,12 @@ class App(FireCli):
         return Connection(host=cls._get('host'), port=cls._get_int('port'), user=cls._get('user'),
                           pwd=cls._get('password'), schema=cls._get('db'))
 
+    @classmethod
+    def rpclient(cls, endpoint):
+        from firecli.rpc import Rpc
+        c = Rpc.rpyc_client(endpoint)
+        return c
+
 
 class Route(FireCli):
     _controller_dir = 'app.controllers'

@@ -19,11 +19,13 @@ class Test(object):
         args = {
             'url': 'http://api.plos.org/search?q=',
         }
-        a = app.utils().get_http_json(**args)
-        print(type(a))
-        print(a)
+        # a = app.utils().get_http_json(**args)
+        # print(type(a))
+        # print(a)
         print(app.utils().get_eval_string('[1, 2, 3]'))
-        print(Model.version())
+        # print(Model.version())
+        c = app.rpclient("127.0.0.1:4242")
+        print(c.hello("rpc"))
 
     @staticmethod
     def run():
