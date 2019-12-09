@@ -1,8 +1,8 @@
 from firecli import FireCli, Connection
+import sys
 
 
 class App(FireCli):
-
     _config_path = './config/config.ini'
     _mysql_section = 'mysql::'
 
