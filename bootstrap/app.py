@@ -45,6 +45,13 @@ class Route(FireCli):
     def __init__(self):
         super(Route, self).__init__()
 
+    @staticmethod
+    def usage():
+        print('main.py usage:')
+        print('-h: print help message.')
+        print('-rpc: run rpc with daemon')
+        print('default: run fire cli program')
+
     @classmethod
     def run_fire(cls):
         super(Route, cls).init_fire(cls._controller_dir)
@@ -53,4 +60,14 @@ class Route(FireCli):
     def run_rpc(cls, name):
         super(Route, cls).init_rpc(cls._controller_dir, name, endpoint=App.config().get('rpc::endpoint'))
 
-
+    @classmethod
+    def run(cls):
+        try:
+            if sys.argv[1] == '-rpc':
+                cls.run_rpc(sys.argv[2])
+            elif sys.argv[1] == '-h':
+                cls.usage()
+            else:
+                cls.run_fire()
+        except IndexError:
+            cls.usage()
