@@ -2,9 +2,13 @@ import socket
 import requests
 import json
 import ast
+import os
 import sys
 import six
-import subprocess
+if os.name == 'posix' and sys.version_info[0] < 3:
+    import subprocess32 as subprocess
+else:
+    import subprocess
 
 
 class Utils(object):

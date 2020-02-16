@@ -17,6 +17,8 @@ FIRECLI把那些烦人的定位参数，可选参数等等全部进行了封装�
 
 3.内置RPC模块（ RPyC / zeroprc ）
 
+4.封装Ansible bootstrap run 模块
+
 
 ## 目录结构
 

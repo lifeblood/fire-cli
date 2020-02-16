@@ -1,0 +1,5 @@
+- hosts: '{{ target }}'
+  remote_user: deploy
+  serial: 1
+  roles:
+    - { role: foobar}
