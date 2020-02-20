@@ -30,3 +30,7 @@ class Test(object):
     @staticmethod
     def run():
         return 'Ingesting! Nom nom nom...'
+
+    @staticmethod
+    def test(name="World"):
+        return "Hello %s!" % name
