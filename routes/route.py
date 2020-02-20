@@ -1,5 +1,5 @@
 ################################################
-# Controllers Directory Filename Classname MAP #
+# Controllers Directory Filename Classname Map #
 # LEFT: package name                           #
 # RIGHT: classname                             #
 ################################################
@@ -9,5 +9,12 @@ route_dict = {
     "sub.test": "Test"
 }
 
-
 ################################################
+# Rpc Directory Filename Classname Map
+# rpc route
+# app.rpc
+################################################
+
+rpc_dict = {
+    "rpc": "Rpc"
+}

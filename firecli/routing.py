@@ -1,6 +1,6 @@
 import importlib
 import sys
-from routes.route import route_dict
+from routes.route import route_dict, rpc_dict
 
 
 class Routing(object):
@@ -19,9 +19,9 @@ class Routing(object):
         return fire_routes
 
     @classmethod
-    def get_rpc_routes(cls, controller_dir, name):
+    def get_rpc_routes(cls, rpc_dir, name):
         try:
-            rpc_route = getattr(importlib.import_module(controller_dir + '.' + name), route_dict[name])
+            rpc_route = getattr(importlib.import_module(rpc_dir + '.' + name), rpc_dict[name])
             return rpc_route
-        except (RuntimeError, TypeError, NameError, ModuleNotFoundError) as e:
-            sys.exit("Get rpc route name [{}] error: {}".format(name, e))
+        except (RuntimeError, TypeError, NameError, ModuleNotFoundError, KeyError) as e:
+            sys.exit("Get rpc route name [{}.{}] error: {}".format(rpc_dir, name, e))
