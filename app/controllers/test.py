@@ -7,7 +7,8 @@ class Test(object):
         self._code = code
         self.Bot = TelegramBot(app.config().get('bot_token'))
 
-    def hello(self):
+    @staticmethod
+    def foo():
         print(app.config().get('name'))
         print(app.config().get('mysql::host'))
         print(app.config().get_int('mysql::port'))
@@ -24,6 +25,9 @@ class Test(object):
         # print(a)
         print(app.utils().get_eval_string('[1, 2, 3]'))
         # print(Model.version())
+
+    @staticmethod
+    def rpc():
         c = app.rpclient("127.0.0.1:4242")
         print(c.hello("rpc"))
 

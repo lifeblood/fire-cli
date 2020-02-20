@@ -6,8 +6,7 @@
 
 route_dict = {
     "test": "Test",
-    "sub.test": "Test",
-    "rpc": "Rpc",
+    "sub.test": "Test"
 }
 
 

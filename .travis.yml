@@ -15,4 +15,5 @@ install:
 # command to run tests
 script:
   - nohup python rpc.py rpc &
-  - python main.py test hello
+  - python main.py test foo
+  - python main.py test rpc

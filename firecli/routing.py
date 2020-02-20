@@ -12,7 +12,10 @@ class Routing(object):
         fire_routes = dict()
         from routes.route import route_dict
         for key, value in route_dict.items():
-            fire_routes[key] = getattr(importlib.import_module(controller_dir + '.' + key), value)
+            try:
+                fire_routes[key] = getattr(importlib.import_module(controller_dir + '.' + key), value)
+            except (RuntimeError, TypeError, NameError, ModuleNotFoundError) as e:
+                sys.exit("Get route name [{}] error: {}".format(key, e))
         return fire_routes
 
     @classmethod

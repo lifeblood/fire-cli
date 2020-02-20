@@ -84,6 +84,6 @@ hello --> controllers/test.py method
 ### RPC程序运行(daemon)
 
 ````
-python main.py -rpc {rpc controller}
+python rpc.py {rpc controller}
 
 ````
