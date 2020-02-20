@@ -13,8 +13,8 @@ class FireCli(object):
         fire.Fire(Routing.get_routes(controller_dir))
 
     @classmethod
-    def init_rpc(cls, controller_dir, name, endpoint='0.0.0.0:4242'):
-        Rpc.rpyc_server(Routing.get_rpc_routes(controller_dir, name), endpoint)
+    def init_rpc(cls, rpc_dir, name, endpoint='0.0.0.0:4242'):
+        Rpc.rpyc_server(Routing.get_rpc_routes(rpc_dir, name), endpoint)
 
 
 class Connection(object):

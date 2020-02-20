@@ -20,5 +20,5 @@ class Routing(object):
         try:
             rpc_route = getattr(importlib.import_module(controller_dir + '.' + name), route_dict[name])
             return rpc_route
-        except (RuntimeError, TypeError, NameError) as e:
+        except (RuntimeError, TypeError, NameError, ModuleNotFoundError) as e:
             sys.exit("Get rpc route name [{}] error: {}".format(name, e))
