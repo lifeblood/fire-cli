@@ -3,7 +3,7 @@ asn1crypto==1.1.0
 certifi==2019.9.11
 cffi==1.13.0
 chardet==3.0.4
-cryptography==2.7
+cryptography==3.2
 fire==0.2.1
 future==0.18.0
 idna==2.8
